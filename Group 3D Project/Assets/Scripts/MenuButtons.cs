@@ -26,15 +26,20 @@ public class MenuButtons : MonoBehaviour
 
     public void Pause()
     {
+
         if(Time.timeScale == 1)
         {
             Time.timeScale = 0;
             GetComponent<Canvas>().enabled = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {
             Time.timeScale = 1;
             GetComponent<Canvas>().enabled = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }
