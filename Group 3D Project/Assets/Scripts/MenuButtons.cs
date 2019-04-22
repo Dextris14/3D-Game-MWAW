@@ -5,20 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool PauseMenu = false;
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu)
+        {
+            Pause();
+        }
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void Pause()
+    {
+        if(Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            GetComponent<Canvas>().enabled = true;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            GetComponent<Canvas>().enabled = false;
+        }
     }
 }
