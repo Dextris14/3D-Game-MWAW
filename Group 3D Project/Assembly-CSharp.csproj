@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MenuButtons.cs" />
+    <Compile Include="Assets\Scripts\NavScript.cs" />
     <Compile Include="Assets\Scripts\SavingScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
