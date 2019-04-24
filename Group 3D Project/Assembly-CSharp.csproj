@@ -62,10 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\LightningMonster.cs" />
+    <Compile Include="Assets\Scripts\DamageScript.cs" />
+    <Compile Include="Assets\Scripts\HealthAndMana.cs" />
+    <Compile Include="Assets\Scripts\LightningMonsterScript.cs" />
+    <Compile Include="Assets\Scripts\LightningSpawn.cs" />
     <Compile Include="Assets\Scripts\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\NavScript.cs" />
     <Compile Include="Assets\Scripts\SavingScript.cs" />
+    <Compile Include="Assets\Scripts\SwarmLeaderScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

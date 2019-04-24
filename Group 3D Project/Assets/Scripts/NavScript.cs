@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class NavScript : MonoBehaviour
+public class NavScript: MonoBehaviour
 {
     NavMeshAgent Agent;
     GameObject Player;
