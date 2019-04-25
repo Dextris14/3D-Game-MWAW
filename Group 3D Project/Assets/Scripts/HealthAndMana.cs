@@ -27,7 +27,7 @@ public class HealthAndMana : MonoBehaviour
         while(true)
         {
             Health += 1;
-            Mana += 1;
+            Mana += 2.5f;
             if(Health > 100)
             {
                 Health = 100;

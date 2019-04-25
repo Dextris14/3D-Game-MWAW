@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3649890755028761475
+--- !u!1 &1523468211961614099
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3649890755028761501}
-  - component: {fileID: 3649890755028761500}
-  - component: {fileID: 3649890755028761503}
-  - component: {fileID: 3649890755028761502}
-  - component: {fileID: 3649890755028761473}
-  - component: {fileID: 3649890755028761472}
-  m_Layer: 0
-  m_Name: Fire Enemy
+  - component: {fileID: 1523468211961614093}
+  - component: {fileID: 1523468211961614092}
+  - component: {fileID: 1523468211961614095}
+  - component: {fileID: 1523468211961614094}
+  - component: {fileID: 1523468211961614097}
+  - component: {fileID: 1523468211961614096}
+  - component: {fileID: 6294195303420471474}
+  m_Layer: 8
+  m_Name: Frost Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3649890755028761501
+--- !u!4 &1523468211961614093
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649890755028761475}
+  m_GameObject: {fileID: 1523468211961614099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 501.42282, y: 7.416, z: 488.34384}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 501.62512, y: 6.358, z: 536.5221}
+  m_LocalScale: {x: 2, y: 4, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3649890755028761500
+--- !u!33 &1523468211961614092
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649890755028761475}
+  m_GameObject: {fileID: 1523468211961614099}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3649890755028761503
+--- !u!23 &1523468211961614095
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649890755028761475}
+  m_GameObject: {fileID: 1523468211961614099}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,43 +81,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3649890755028761502
+--- !u!65 &1523468211961614094
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649890755028761475}
+  m_GameObject: {fileID: 1523468211961614099}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3649890755028761473
+--- !u!114 &1523468211961614097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649890755028761475}
+  m_GameObject: {fileID: 1523468211961614099}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e094ecdf6730ddd4288a453bca2c7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 35
---- !u!195 &3649890755028761472
+--- !u!195 &1523468211961614096
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3649890755028761475}
+  m_GameObject: {fileID: 1523468211961614099}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.75
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -125,6 +126,19 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 3
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6294195303420471474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523468211961614099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60d8c7d74c2d0d4eb3ae2f08b376661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5.5
