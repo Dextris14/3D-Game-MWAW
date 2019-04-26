@@ -15,8 +15,10 @@ GameObject:
   - component: {fileID: 6621648922286819346}
   - component: {fileID: 282698643278273583}
   - component: {fileID: 424048137}
+  - component: {fileID: 8501822512405639276}
   - component: {fileID: 424048136}
-  m_Layer: 0
+  - component: {fileID: 530799107111059229}
+  m_Layer: 8
   m_Name: Lightning Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2225a2b50ce0d748bf50dab4b3dbf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChaseDistance: 35
+  ChaseDistance: 50
+  Health: 65
 --- !u!195 &282698643278273583
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -213,7 +216,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3652,9 +3655,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -3830,11 +3833,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 567
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4109,7 +4112,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4788,6 +4791,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &8501822512405639276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282698643278273580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60d8c7d74c2d0d4eb3ae2f08b376661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 2.5
 --- !u!199 &424048136
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4850,3 +4866,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &530799107111059229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282698643278273580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd04bfe029508241b830f4139182b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

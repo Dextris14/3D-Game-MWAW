@@ -10,10 +10,10 @@ public class LightningMonsterScript : MonoBehaviour
     GameObject Player;
     public float ChaseDistance = 10;
     private Vector3 Home;
+    public float Health = 100f;
 
     void Start()
     {
-        Home = transform.position;
         Agent = GetComponent<NavMeshAgent>();
         Player = GameObject.Find("RigidBodyFPSController");
         StartCoroutine("Relocate");
@@ -35,9 +35,21 @@ public class LightningMonsterScript : MonoBehaviour
             }
             else
             {
-                Agent.destination = Home + new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
+                Agent.destination = transform.position + new Vector3(Random.Range(-20f, 20f), 0, Random.Range(-20f, 20f));
             }
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3.5f);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Magic")
+        {
+            Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

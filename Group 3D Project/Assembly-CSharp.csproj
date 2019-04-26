@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DamageScript.cs" />
+    <Compile Include="Assets\Scripts\DamagingParticles.cs" />
     <Compile Include="Assets\Scripts\FireMonster.cs" />
     <Compile Include="Assets\Scripts\HealthAndMana.cs" />
     <Compile Include="Assets\Scripts\LightningMonsterScript.cs" />
