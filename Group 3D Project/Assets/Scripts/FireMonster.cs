@@ -21,7 +21,7 @@ public class FireMonster : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 27, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
         }
-        else if ((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 50f)
+        else if ((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 50f && (GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude >= 10f)
         {
             GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 7, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
             if (FireCD <= 0)
@@ -29,6 +29,10 @@ public class FireMonster : MonoBehaviour
                 Instantiate(Firebolt, transform.position, Quaternion.identity);
                 FireCD = 5f;
             }
+        }
+        else if((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 10f)
+        {
+
         }
     }
 
