@@ -333,6 +333,21 @@
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
+    <Reference Include="Poly2Tri">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
+    </Reference>
+    <Reference Include="KdTreeLib">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="pb_Stl">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderCore-Unity5">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderMeshOps-Unity5">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
     </Reference>

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Minion
   - Magic
+  - LightningMonster
   layers:
   - Default
   - TransparentFX

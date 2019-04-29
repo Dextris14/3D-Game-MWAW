@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class FireMonster : MonoBehaviour
 {
-    float SwoopCD = 10f;
-    bool Swooped = false;
-    float SwoopRecover = 3f;
+    float FireCD = 5f;
+    public GameObject Firebolt;
     public float Health = 100f;
     // Start is called before the first frame update
     void Start()
@@ -17,32 +16,18 @@ public class FireMonster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SwoopCD -= Time.deltaTime;
-        if((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 9001f)
+        FireCD -= Time.deltaTime;
+        if((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 100f && (GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude >= 50f)
         {
-            if(SwoopCD <= 0 && (GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 25f)
+            GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 27, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
+        }
+        else if ((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 50f)
+        {
+            GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 7, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
+            if (FireCD <= 0)
             {
-                if(!Swooped)
-                {
-                    GetComponent<Rigidbody>().AddForce((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).normalized * 30, ForceMode.VelocityChange);
-                    Swooped = true;
-                }
-                else
-                {
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, SwoopRecover, 0));
-                    SwoopRecover -= Time.deltaTime;
-                    if(SwoopRecover <= 0)
-                    {
-                        SwoopCD = 10f;
-                        Swooped = false;
-                        SwoopRecover = 3f;
-                    }
-                }
-            }
-            else
-            {
-
-                GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 7, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
+                Instantiate(Firebolt, transform.position, Quaternion.identity);
+                FireCD = 5f;
             }
         }
     }

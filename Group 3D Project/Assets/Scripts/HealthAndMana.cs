@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthAndMana : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class HealthAndMana : MonoBehaviour
     {
         HealthBar.value = Health;
         ManaBar.value = Mana;
+        if(Health <= 0)
+        {
+            SceneManager.LoadScene("DeathScene");
+        }
     }
 
     IEnumerator Regen()

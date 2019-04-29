@@ -31,13 +31,13 @@ public class LightningMonsterScript : MonoBehaviour
             Vector3 Direction = Player.transform.position - transform.position;
             if (Direction.magnitude <= ChaseDistance)
             {
-                Agent.destination = Player.transform.position + new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f));
+                Agent.destination = Player.transform.position + new Vector3(Random.Range(-2.5f, 2.5f), 0, Random.Range(-2.5f, 2.5f));
             }
             else
             {
-                Agent.destination = transform.position + new Vector3(Random.Range(-20f, 20f), 0, Random.Range(-20f, 20f));
+                Agent.destination = transform.position + new Vector3(Random.Range(-30f, 30f), 0, Random.Range(-30f, 30f));
             }
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(.75f);
         }
     }
 
