@@ -60,4 +60,20 @@ public class HealthAndMana : MonoBehaviour
             Health -= collision.gameObject.GetComponent<DamageScript>().Damage;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 8)
+        {
+            Health -= other.gameObject.GetComponent<DamageScript>().Damage;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            Health -= other.gameObject.GetComponent<DamageScript>().Damage;
+        }
+    }
 }

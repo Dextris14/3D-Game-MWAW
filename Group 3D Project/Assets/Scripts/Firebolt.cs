@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Firebolt : MonoBehaviour
 {
+    public GameObject Prefab;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = (GameObject.Find("RigidBodyFPSController").transform.position - transform.position).normalized * 10;
+        
     }
 
     // Update is called once per frame
@@ -18,9 +19,15 @@ public class Firebolt : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.tag == "Player")
+        {
+            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Health -= 15f;
+            Destroy(gameObject);
+        }
         if(collision.gameObject.layer == 10)
         {
-
+            GameObject Splash = Instantiate(Prefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
