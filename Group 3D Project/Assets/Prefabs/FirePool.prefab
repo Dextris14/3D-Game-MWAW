@@ -4765,6 +4765,7 @@ GameObject:
   - component: {fileID: 5301992043310809442}
   - component: {fileID: 5301992043310809445}
   - component: {fileID: 1458278739}
+  - component: {fileID: 2071593180}
   m_Layer: 8
   m_Name: FirePool
   m_TagString: Untagged
@@ -4860,6 +4861,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
+--- !u!114 &2071593180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301992043310809444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935b868fc2579d64aa4cd3096e60b0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 10
 --- !u!1 &5301992044599306533
 GameObject:
   m_ObjectHideFlags: 0
