@@ -2,32 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwarmLeaderScript : MonoBehaviour
+public class MinionScript : MonoBehaviour
 {
-    public GameObject Minion;
-    public float Health = 100f;
+    public float Health = 10f;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("SpawnMinion");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    IEnumerator SpawnMinion()
-    {
-        while(true)
-        {
-            if(GameObject.FindGameObjectsWithTag("Minion").Length < 10)
-            {
-                Instantiate(Minion, transform.position, Quaternion.identity);
-            }
-            yield return new WaitForSeconds(5f);
-        }
     }
 
     private void OnCollisionEnter(Collision collision)

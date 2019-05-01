@@ -33,7 +33,7 @@ public class MonsterSpawn : MonoBehaviour
             }
         }
 
-        if (Slime && !GameObject.Find("Swarm Leader"))
+        if (Slime && GameObject.FindGameObjectWithTag("Slime") == null)
         {
             RespawnTimes[1] -= Time.deltaTime;
             if (RespawnTimes[1] <= 0)
@@ -43,7 +43,7 @@ public class MonsterSpawn : MonoBehaviour
             }
         }
 
-        if (Giant && !GameObject.Find("Giant"))
+        if (Giant && GameObject.Find("Giant") == null)
         {
             RespawnTimes[2] -= Time.deltaTime;
             if (RespawnTimes[2] <= 0)
@@ -53,7 +53,7 @@ public class MonsterSpawn : MonoBehaviour
             }
         }
 
-        if (Imp && !GameObject.Find("Fire Monster"))
+        if (Imp && GameObject.Find("Fire Monster") == null)
         {
             RespawnTimes[3] -= Time.deltaTime;
             if (RespawnTimes[3] <= 0)

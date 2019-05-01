@@ -25,6 +25,20 @@ public class HealthAndMana : MonoBehaviour
         {
             SceneManager.LoadScene("DeathScene");
         }
+        if(Input.GetKey(KeyCode.Mouse1) && Time.timeScale == 1)
+        {
+            Mana += .2f;
+            GetComponent<Rigidbody>().isKinematic = true;
+            if(GameObject.Find("ChargeEffect").GetComponent<ParticleSystem>().isPlaying == false)
+            {
+                GameObject.Find("ChargeEffect").GetComponent<ParticleSystem>().Play();
+            }
+        }
+        else
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            GameObject.Find("ChargeEffect").GetComponent<ParticleSystem>().Stop();
+        }
     }
 
     IEnumerator Regen()

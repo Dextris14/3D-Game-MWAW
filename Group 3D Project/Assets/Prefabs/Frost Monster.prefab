@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1523468211961614099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 501.62512, y: 6.358, z: 536.5221}
-  m_LocalScale: {x: 2, y: 4, z: 2}
+  m_LocalScale: {x: 8, y: 16, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e094ecdf6730ddd4288a453bca2c7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChaseDistance: 35
+  ChaseDistance: 100
 --- !u!195 &1523468211961614096
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1523468211961614099}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 1.75
   m_Acceleration: 8
   avoidancePriority: 50

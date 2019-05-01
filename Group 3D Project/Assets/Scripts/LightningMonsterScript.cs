@@ -51,5 +51,13 @@ public class LightningMonsterScript : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (collision.gameObject.tag == "Explosion")
+        {
+            Health -= 10;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1417660827}
   m_Layer: 8
   m_Name: Swarm Leader
-  m_TagString: Untagged
+  m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e094ecdf6730ddd4288a453bca2c7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChaseDistance: 35
+  ChaseDistance: 50
 --- !u!195 &319806387091732686
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Minion: {fileID: 7888270467110671313, guid: 193fba2b5ffd12748b96c0f872c9603a, type: 3}
+  Health: 100
 --- !u!114 &1417660827
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\LightningSpawn.cs" />
     <Compile Include="Assets\Scripts\Magic.cs" />
     <Compile Include="Assets\Scripts\MenuButtons.cs" />
+    <Compile Include="Assets\Scripts\MinionScript.cs" />
     <Compile Include="Assets\Scripts\MonsterSpawn.cs" />
     <Compile Include="Assets\Scripts\NavScript.cs" />
     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
