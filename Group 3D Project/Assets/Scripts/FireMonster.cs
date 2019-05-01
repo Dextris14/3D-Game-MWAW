@@ -7,30 +7,33 @@ public class FireMonster : MonoBehaviour
     float FireCD = 5f;
     public GameObject Firebolt;
     public float Health = 100f;
+    public GameObject Prefab;
+    GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
-
+        Player = GameObject.Find("RigidBodyFPSController");
     }
 
     // Update is called once per frame
     void Update()
     {
         FireCD -= Time.deltaTime;
-        if((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 100f && (GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude >= 50f)
+        if ((Player.transform.position - transform.position).magnitude < 100f && (Player.transform.position - transform.position).magnitude >= 50f)
         {
-            GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 27, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = (GameObject.Find("FireLeader").transform.position - transform.position).normalized * 3f;
         }
-        else if ((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 50f && (GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude >= 10f)
+        else if ((Player.transform.position - transform.position).magnitude < 50f && (Player.transform.position - transform.position).magnitude >= 10f)
         {
-            GetComponent<Rigidbody>().velocity = ((GameObject.Find("RigidBodyFPSController").transform.position + new Vector3(Random.Range(0f, 5f), 7, Random.Range(0f, 5f)) - transform.position)).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = (GameObject.Find("FireLeader").transform.position - transform.position).normalized * 3f;
             if (FireCD <= 0)
             {
-                Instantiate(Firebolt, transform.position, Quaternion.identity);
+                GameObject Projectile = Instantiate(Firebolt, transform.position, Quaternion.identity);
+                Projectile.GetComponent<Rigidbody>().velocity = (Player.transform.position - transform.position).normalized * 30;
                 FireCD = 5f;
             }
         }
-        else if((GameObject.Find("RigidBodyFPSController").transform.position - transform.position).magnitude < 10f)
+        else if((Player.transform.position - transform.position).magnitude < 10f)
         {
 
         }
@@ -42,6 +45,14 @@ public class FireMonster : MonoBehaviour
         {
             Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
             if(Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (collision.gameObject.tag == "Explosion")
+        {
+            Health -= 10;
+            if (Health <= 0)
             {
                 Destroy(gameObject);
             }

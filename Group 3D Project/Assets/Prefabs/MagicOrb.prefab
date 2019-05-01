@@ -4843,6 +4843,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5766c4909a20c4da019edac24f1574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplodeEffect: {fileID: 5279179335491645902, guid: ceb1df2d019ea9e4abeb072e7c6793ec,
-    type: 3}
+  ExplodeEffect:
+  - {fileID: 5279179335491645902, guid: ceb1df2d019ea9e4abeb072e7c6793ec, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Damage: 10
+  Type: 1

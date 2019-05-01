@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7888270467110671315}
   - component: {fileID: 7888270467110671314}
   - component: {fileID: 1627983154}
+  - component: {fileID: 2100000733}
   m_Layer: 8
   m_Name: Swarm Minion
   m_TagString: Minion
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e094ecdf6730ddd4288a453bca2c7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChaseDistance: 35
+  ChaseDistance: 55
 --- !u!195 &7888270467110671314
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -142,3 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 0.5
+--- !u!114 &2100000733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888270467110671313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cad92341ecf36409df69efbcfa2528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 10

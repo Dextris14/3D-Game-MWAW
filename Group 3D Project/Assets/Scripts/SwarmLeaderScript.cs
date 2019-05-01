@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwarmLeaderScript : MonoBehaviour
 {
     public GameObject Minion;
+    public float Health = 100f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,26 @@ public class SwarmLeaderScript : MonoBehaviour
                 Instantiate(Minion, transform.position, Quaternion.identity);
             }
             yield return new WaitForSeconds(5f);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Magic")
+        {
+            Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (collision.gameObject.tag == "Explosion")
+        {
+            Health -= 10;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
