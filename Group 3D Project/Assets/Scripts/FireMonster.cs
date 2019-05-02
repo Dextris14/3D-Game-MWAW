@@ -7,7 +7,6 @@ public class FireMonster : MonoBehaviour
     float FireCD = 5f;
     public GameObject Firebolt;
     public float Health = 100f;
-    public GameObject Prefab;
     GameObject Player;
     // Start is called before the first frame update
     void Start()

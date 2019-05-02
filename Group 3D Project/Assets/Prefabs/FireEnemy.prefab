@@ -9858,7 +9858,7 @@ GameObject:
   - component: {fileID: 149368358395247075}
   m_Layer: 8
   m_Name: FireEnemy
-  m_TagString: Untagged
+  m_TagString: Imp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9941,7 +9941,6 @@ MonoBehaviour:
   Firebolt: {fileID: 2573580492187199568, guid: b060b30c4289a4c4f9dacc339a3899f2,
     type: 3}
   Health: 100
-  Prefab: {fileID: 0}
 --- !u!54 &1408478903125116512
 Rigidbody:
   m_ObjectHideFlags: 0

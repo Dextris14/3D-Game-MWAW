@@ -17,7 +17,7 @@ public class ProjectileScript : MonoBehaviour
     void Update()
     {
         Countdown -= Time.deltaTime;
-        if (Countdown <= 0)
+        if (Countdown <= 0 && Type != 3)
         {
             Explode();
         }
@@ -35,6 +35,16 @@ public class ProjectileScript : MonoBehaviour
         {
             GameObject Effect = Instantiate(ExplodeEffect[1], transform.position, Quaternion.identity);
             Destroy(Effect, 1f);
+            GetComponent<SphereCollider>().isTrigger = true;
+            GetComponent<Rigidbody>().isKinematic = true;
+            Damage = .3f;
+            transform.localScale *= 5;
+            Destroy(gameObject, 1f);
+        }
+        if (Type == 3)
+        {
+            GameObject Effect = Instantiate(ExplodeEffect[2], transform.position, Quaternion.identity);
+            Destroy(Effect, 4.9f);
             Destroy(gameObject);
         }
     }

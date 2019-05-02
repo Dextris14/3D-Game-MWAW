@@ -53,7 +53,7 @@ public class MonsterSpawn : MonoBehaviour
             }
         }
 
-        if (Imp && GameObject.Find("Fire Monster") == null)
+        if (Imp && GameObject.FindGameObjectWithTag("Imp") == null)
         {
             RespawnTimes[3] -= Time.deltaTime;
             if (RespawnTimes[3] <= 0)

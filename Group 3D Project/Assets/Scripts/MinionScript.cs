@@ -36,4 +36,15 @@ public class MinionScript : MonoBehaviour
             }
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Magic")
+        {
+            Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
