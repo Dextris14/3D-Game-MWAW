@@ -10,6 +10,7 @@ public class NavScript: MonoBehaviour
     GameObject Player;
     public float ChaseDistance = 10;
     private Vector3 Home;
+    public bool Leader = false;
 
     void Start()
     {
@@ -28,6 +29,11 @@ public class NavScript: MonoBehaviour
         else
         {
             Agent.destination = Home;
+        }
+
+        if(Leader && GameObject.FindGameObjectWithTag("Imp") == null)
+        {
+            Destroy(gameObject);
         }
     }
 }

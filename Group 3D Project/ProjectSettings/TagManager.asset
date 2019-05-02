@@ -9,6 +9,7 @@ TagManager:
   - LightningMonster
   - Slime
   - Explosion
+  - Imp
   layers:
   - Default
   - TransparentFX

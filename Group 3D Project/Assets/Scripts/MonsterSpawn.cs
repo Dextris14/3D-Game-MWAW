@@ -59,6 +59,7 @@ public class MonsterSpawn : MonoBehaviour
             if (RespawnTimes[3] <= 0)
             {
                 Instantiate(Prefabs[3], transform.position, Quaternion.identity);
+                Instantiate(Prefabs[4], transform.position + new Vector3(0, 18, 0), Quaternion.identity);
                 RespawnTimes[3] = 15f;
             }
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Magic : MonoBehaviour
 {
     Camera Camera;
-    public GameObject[] Prefab = new GameObject[5];
+    public GameObject[] Prefab = new GameObject[6];
     public int SelectedMagic = 1;
 
     void Start()
@@ -69,6 +69,52 @@ public class Magic : MonoBehaviour
             Velocity.Normalize();
             GameObject Projectile = Instantiate(Prefab[1], transform.position, Quaternion.identity);
             Projectile.GetComponent<Rigidbody>().velocity = Velocity * 20;
+        }
+        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 20f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 3)
+        {
+            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 20f;
+            if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out Hit, 50f))
+            {
+                if(Hit.transform.gameObject.tag == "Lightning Monster")
+                {
+                    Hit.transform.gameObject.GetComponent<LightningMonsterScript>().Health -= 20f;
+                    if(Hit.transform.gameObject.GetComponent<LightningMonsterScript>().Health <= 0)
+                    {
+                        Destroy(Hit.transform.gameObject);
+                    }
+                }
+                else if(Hit.transform.gameObject.tag == "Slime")
+                {
+                    Hit.transform.gameObject.GetComponent<SwarmLeaderScript>().Health -= 20f;
+                    if (Hit.transform.gameObject.GetComponent<SwarmLeaderScript>().Health <= 0)
+                    {
+                        Destroy(Hit.transform.gameObject);
+                    }
+                }
+                else if(Hit.transform.gameObject.tag == "Minion")
+                {
+                    Hit.transform.gameObject.GetComponent<MinionScript>().Health -= 20f;
+                    if (Hit.transform.gameObject.GetComponent<MinionScript>().Health <= 0)
+                    {
+                        Destroy(Hit.transform.gameObject);
+                    }
+                }
+                else if (Hit.transform.gameObject.tag == "Imp")
+                {
+                    Hit.transform.gameObject.GetComponent<FireMonster>().Health -= 20f;
+                    if (Hit.transform.gameObject.GetComponent<FireMonster>().Health <= 0)
+                    {
+                        Destroy(Hit.transform.gameObject);
+                    }
+                }
+                GameObject Zap = Instantiate(Prefab[5], transform.position - (Camera.transform.forward * ((Hit.point - transform.position).magnitude * .11f)), Quaternion.identity);
+                Zap.GetComponent<ZapScript>().Destination = Hit.point;
+            }
+            else
+            {
+                GameObject Zap = Instantiate(Prefab[5], transform.position, Quaternion.identity);
+                Zap.GetComponent<ZapScript>().Destination = transform.position + (Camera.transform.forward * 50f);
+            }
         }
     }
 }
