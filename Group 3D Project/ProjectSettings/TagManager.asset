@@ -10,6 +10,8 @@ TagManager:
   - Slime
   - Explosion
   - Imp
+  - SlimePool
+  - Leader
   layers:
   - Default
   - TransparentFX

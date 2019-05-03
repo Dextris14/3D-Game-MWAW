@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SwarmLeaderScript : MonoBehaviour
 {
@@ -58,6 +59,18 @@ public class SwarmLeaderScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        if(other.gameObject.tag == "SlimePool")
+        {
+            GetComponent<NavMeshAgent>().speed = .875f;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "SlimePool")
+        {
+            GetComponent<NavMeshAgent>().speed = 1.75f;
         }
     }
 }

@@ -4876,7 +4876,7 @@ MonoBehaviour:
   Prefab:
   - {fileID: 1284636339723801656, guid: fa9407fa10db6af4b95fa99ecf986cd4, type: 3}
   - {fileID: 4519726853311268080, guid: 8f2f112a2c224c548a190229fa87746a, type: 3}
-  - {fileID: 0}
+  - {fileID: 1959025468545091068, guid: 6bc7c3095abfbde44aea2ba4e31d2798, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 5713611889037063422, guid: 6b80dc952c8b6e9409090b476a9d7790, type: 3}

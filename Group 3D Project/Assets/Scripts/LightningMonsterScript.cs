@@ -60,4 +60,28 @@ public class LightningMonsterScript : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Magic")
+        {
+            Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (other.gameObject.tag == "SlimePool")
+        {
+            GetComponent<NavMeshAgent>().speed = 2.5f;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "SlimePool")
+        {
+            GetComponent<NavMeshAgent>().speed = 25f;
+        }
+    }
 }

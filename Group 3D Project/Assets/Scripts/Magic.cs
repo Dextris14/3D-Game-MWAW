@@ -116,5 +116,22 @@ public class Magic : MonoBehaviour
                 Zap.GetComponent<ZapScript>().Destination = transform.position + (Camera.transform.forward * 50f);
             }
         }
+        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 20f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 4)
+        {
+            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 20f;
+            Vector3 Destination;
+            if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out Hit))
+            {
+                Destination = Hit.point;
+            }
+            else
+            {
+                Destination = Camera.transform.position + Camera.transform.forward * 50;
+            }
+            Vector3 Velocity = Destination - transform.position;
+            Velocity.Normalize();
+            GameObject Projectile = Instantiate(Prefab[2], transform.position, Quaternion.identity);
+            Projectile.GetComponent<Rigidbody>().velocity = Velocity * 20;
+        }
     }
 }
