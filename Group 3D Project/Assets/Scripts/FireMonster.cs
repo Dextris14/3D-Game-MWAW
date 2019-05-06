@@ -7,7 +7,6 @@ public class FireMonster : MonoBehaviour
     float FireCD = 5f;
     public GameObject Firebolt;
     public float Health = 100f;
-    public GameObject Prefab;
     GameObject Player;
     // Start is called before the first frame update
     void Start()
@@ -21,11 +20,11 @@ public class FireMonster : MonoBehaviour
         FireCD -= Time.deltaTime;
         if ((Player.transform.position - transform.position).magnitude < 100f && (Player.transform.position - transform.position).magnitude >= 50f)
         {
-            GetComponent<Rigidbody>().velocity = (GameObject.Find("FireLeader").transform.position - transform.position).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
         }
         else if ((Player.transform.position - transform.position).magnitude < 50f && (Player.transform.position - transform.position).magnitude >= 10f)
         {
-            GetComponent<Rigidbody>().velocity = (GameObject.Find("FireLeader").transform.position - transform.position).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
             if (FireCD <= 0)
             {
                 GameObject Projectile = Instantiate(Firebolt, transform.position, Quaternion.identity);

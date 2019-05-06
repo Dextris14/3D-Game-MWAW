@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lightning: 0
-  Slime: 0
+  Slime: 1
   Giant: 0
   Imp: 0
   Prefabs:
@@ -52,3 +52,4 @@ MonoBehaviour:
   - {fileID: 319806387091732685, guid: 1d842c467129b3442bb6a64ae42cc912, type: 3}
   - {fileID: 0}
   - {fileID: 2390540950167219435, guid: 52e37e47436d31e449969abdf7ce7540, type: 3}
+  - {fileID: 2273452593384080381, guid: 2e0c43cab92553540983d70ffdf79f88, type: 3}

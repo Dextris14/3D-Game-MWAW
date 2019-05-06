@@ -38,7 +38,7 @@ public class MonsterSpawn : MonoBehaviour
             RespawnTimes[1] -= Time.deltaTime;
             if (RespawnTimes[1] <= 0)
             {
-                Instantiate(Prefabs[1], transform.position, Quaternion.identity);
+                Instantiate(Prefabs[1], transform.position + new Vector3(0, -2, 0), Quaternion.identity);
                 RespawnTimes[1] = 15f;
             }
         }
@@ -53,7 +53,7 @@ public class MonsterSpawn : MonoBehaviour
             }
         }
 
-        if (Imp && GameObject.Find("Fire Monster") == null)
+        if (Imp && GameObject.FindGameObjectWithTag("Imp") == null)
         {
             RespawnTimes[3] -= Time.deltaTime;
             if (RespawnTimes[3] <= 0)

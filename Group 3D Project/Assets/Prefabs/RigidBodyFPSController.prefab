@@ -4873,7 +4873,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eb30b959931ec47bd4f7cbdbbeace4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1284636339723801656, guid: fa9407fa10db6af4b95fa99ecf986cd4, type: 3}
+  Prefab:
+  - {fileID: 1284636339723801656, guid: fa9407fa10db6af4b95fa99ecf986cd4, type: 3}
+  - {fileID: 4519726853311268080, guid: 8f2f112a2c224c548a190229fa87746a, type: 3}
+  - {fileID: 1959025468545091068, guid: 6bc7c3095abfbde44aea2ba4e31d2798, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 5713611889037063422, guid: 6b80dc952c8b6e9409090b476a9d7790, type: 3}
+  SelectedMagic: 1
 --- !u!1 &8353803202673449677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,7 +5006,7 @@ MonoBehaviour:
     XSensitivity: 2
     YSensitivity: 2
     clampVerticalRotation: 1
-    MinimumX: -45
+    MinimumX: -65
     MaximumX: 90
     smooth: 1
     smoothTime: 18

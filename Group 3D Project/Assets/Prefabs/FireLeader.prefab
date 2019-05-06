@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2273452593384080382}
   m_Layer: 8
   m_Name: FireLeader
-  m_TagString: Minion
+  m_TagString: Leader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 999
+  Leader: 0
 --- !u!195 &2273452593384080382
 NavMeshAgent:
   m_ObjectHideFlags: 0

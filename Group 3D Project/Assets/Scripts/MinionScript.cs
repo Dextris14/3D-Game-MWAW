@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MinionScript : MonoBehaviour
 {
@@ -34,6 +35,29 @@ public class MinionScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Magic")
+        {
+            Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if(other.gameObject.tag == "SlimePool")
+        {
+            GetComponent<NavMeshAgent>().speed = 1.75f;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "SlimePool")
+        {
+            GetComponent<NavMeshAgent>().speed = 3.5f;
         }
     }
 }
