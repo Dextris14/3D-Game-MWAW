@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/StartMenu.unity
-=======
-- path: Assets/Scenes/SampleMaze.unity
->>>>>>> 7ca0a15bddb4ba2c65c2146b143839187758f500
+- path: Assets/Scenes/Game 2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
