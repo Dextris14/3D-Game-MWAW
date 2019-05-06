@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 117735535}
   - component: {fileID: 117735538}
   - component: {fileID: 117735537}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4830,6 +4830,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &551971110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551971111}
+  m_Layer: 9
+  m_Name: SpikeEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551971111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551971110}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8353803202673018603}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1897580860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,7 +4870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1897580861}
   - component: {fileID: 1897580862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WandTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4876,8 +4906,8 @@ MonoBehaviour:
   Prefab:
   - {fileID: 1284636339723801656, guid: fa9407fa10db6af4b95fa99ecf986cd4, type: 3}
   - {fileID: 4519726853311268080, guid: 8f2f112a2c224c548a190229fa87746a, type: 3}
-  - {fileID: 1959025468545091068, guid: 6bc7c3095abfbde44aea2ba4e31d2798, type: 3}
-  - {fileID: 0}
+  - {fileID: 1959025468545091068, guid: 3e25c9ff388562b4880b5515b7299c99, type: 3}
+  - {fileID: 7996400426871586944, guid: 5ee627eec55ec32469a8ab0fec645d1e, type: 3}
   - {fileID: 0}
   - {fileID: 5713611889037063422, guid: 6b80dc952c8b6e9409090b476a9d7790, type: 3}
   SelectedMagic: 1
@@ -5058,7 +5088,7 @@ GameObject:
   - component: {fileID: 8353803202669642955}
   - component: {fileID: 8353803202666393389}
   - component: {fileID: 8353803202665366179}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -5077,6 +5107,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 117735535}
+  - {fileID: 551971111}
   m_Father: {fileID: 8353803202673018601}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -44,9 +44,17 @@ public class ProjectileScript : MonoBehaviour
         {
             if(transform.position.y <= 1)
             {
-                Instantiate(ExplodeEffect[1], new Vector3(transform.position.x, transform.position.y * 0, transform.position.z), Quaternion.identity);
+                Instantiate(ExplodeEffect[1], new Vector3(transform.position.x, 0, transform.position.z), Quaternion.identity);
             }
             Destroy(gameObject);
+        }
+        if (Type == 4)
+        {
+            GameObject Effect = Instantiate(ExplodeEffect[3], transform.position, Quaternion.identity);
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            Destroy(gameObject, 5f);
         }
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44129854, g: 0.490102, b: 0.57015413, a: 1}
+  m_IndirectSpecularColor: {r: 0.43975604, g: 0.48818183, b: 0.56839925, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5006,17 +5006,17 @@ PrefabInstance:
     - target: {fileID: 8353803202673018601, guid: 26272bbfd322aea4eb0d8d45ac94760d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 501.45
+      value: 501.77
       objectReference: {fileID: 0}
     - target: {fileID: 8353803202673018601, guid: 26272bbfd322aea4eb0d8d45ac94760d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 8353803202673018601, guid: 26272bbfd322aea4eb0d8d45ac94760d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 500
+      value: 504.96
       objectReference: {fileID: 0}
     - target: {fileID: 8353803202673018601, guid: 26272bbfd322aea4eb0d8d45ac94760d,
         type: 3}
@@ -10399,7 +10399,7 @@ PrefabInstance:
     - target: {fileID: 5526556172983007884, guid: 321fa3d059fc7f448bf834d58d530cbc,
         type: 3}
       propertyPath: Slime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5526556172983007884, guid: 321fa3d059fc7f448bf834d58d530cbc,
         type: 3}
@@ -10409,7 +10409,7 @@ PrefabInstance:
     - target: {fileID: 5526556172983007884, guid: 321fa3d059fc7f448bf834d58d530cbc,
         type: 3}
       propertyPath: Imp
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 321fa3d059fc7f448bf834d58d530cbc, type: 3}
