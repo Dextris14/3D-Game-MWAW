@@ -133,9 +133,9 @@ public class Magic : MonoBehaviour
             GameObject Projectile = Instantiate(Prefab[2], transform.position, Quaternion.identity);
             Projectile.GetComponent<Rigidbody>().velocity = Velocity * 20;
         }
-        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 20f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 5)
+        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 35f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 5)
         {
-            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 20f;
+            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 35f;
             Vector3 Destination;
             Destination = Camera.transform.position + Camera.transform.forward * 50;
             for(int i = 0; i < 5; i++)
