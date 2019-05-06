@@ -1,13 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Group 3D Project/Assets/headliner_no_45/READ ME-KCFonts.txt.meta
-guid: eeb4eb7d9f34b0d4fb64a211355ac638
-TextScriptImporter:
-=======
-guid: 71c4b55967a33ae49879c9938e6c2ba8
+guid: 416a2ebdaf4682c48b92c2c91aadc95d
 NativeFormatImporter:
->>>>>>> 202d2218089daae273b329074997a41663b7d05b:Group 3D Project/Assets/Materials/Slime.mat.meta
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

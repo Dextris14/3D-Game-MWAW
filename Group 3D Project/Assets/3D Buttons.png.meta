@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Group 3D Project/Assets/3D Buttons.png.meta
 guid: dda392503b0a5dc45815c21b1cd153ae
-=======
-guid: afb850b89c0fb534ba500862733590a8
->>>>>>> 202d2218089daae273b329074997a41663b7d05b:Group 3D Project/Assets/Art/4th Surface Tile Normal Map.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-<<<<<<< HEAD:Group 3D Project/Assets/3D Buttons.png.meta
     enableMipMap: 0
     sRGBTexture: 1
-=======
-    enableMipMap: 1
-    sRGBTexture: 0
->>>>>>> 202d2218089daae273b329074997a41663b7d05b:Group 3D Project/Assets/Art/4th Surface Tile Normal Map.jpg.meta
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -43,13 +34,8 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-<<<<<<< HEAD:Group 3D Project/Assets/3D Buttons.png.meta
     wrapU: 1
     wrapV: 1
-=======
-    wrapU: -1
-    wrapV: -1
->>>>>>> 202d2218089daae273b329074997a41663b7d05b:Group 3D Project/Assets/Art/4th Surface Tile Normal Map.jpg.meta
     wrapW: -1
   nPOTScale: 0
   lightmap: 0
@@ -65,11 +51,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-<<<<<<< HEAD:Group 3D Project/Assets/3D Buttons.png.meta
   textureType: 8
-=======
-  textureType: 1
->>>>>>> 202d2218089daae273b329074997a41663b7d05b:Group 3D Project/Assets/Art/4th Surface Tile Normal Map.jpg.meta
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
