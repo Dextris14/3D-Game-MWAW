@@ -19,6 +19,11 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void LoadGame()
+    {
+
+    }
+
     public void QuitGame()
     {
         Application.Quit();
