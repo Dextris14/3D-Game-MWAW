@@ -7,6 +7,7 @@ public class Magic : MonoBehaviour
     Camera Camera;
     public GameObject[] Prefab = new GameObject[6];
     public int SelectedMagic = 1;
+    public GameObject[] Displays = new GameObject[5];
 
     void Start()
     {
@@ -18,22 +19,47 @@ public class Magic : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             SelectedMagic = 1;
+            Displays[0].SetActive(true);
+            Displays[1].SetActive(false);
+            Displays[2].SetActive(false);
+            Displays[3].SetActive(false);
+            Displays[4].SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SelectedMagic = 2;
+            Displays[0].SetActive(false);
+            Displays[1].SetActive(true);
+            Displays[2].SetActive(false);
+            Displays[3].SetActive(false);
+            Displays[4].SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SelectedMagic = 3;
+            Displays[0].SetActive(false);
+            Displays[1].SetActive(false);
+            Displays[2].SetActive(true);
+            Displays[3].SetActive(false);
+            Displays[4].SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SelectedMagic = 4;
+            Displays[0].SetActive(false);
+            Displays[1].SetActive(false);
+            Displays[2].SetActive(false);
+            Displays[3].SetActive(true);
+            Displays[4].SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             SelectedMagic = 5;
+            Displays[0].SetActive(false);
+            Displays[1].SetActive(false);
+            Displays[2].SetActive(false);
+            Displays[3].SetActive(false);
+            Displays[4].SetActive(true);
         }
         RaycastHit Hit;
         if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 10f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 1)

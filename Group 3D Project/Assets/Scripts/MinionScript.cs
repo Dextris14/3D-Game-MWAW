@@ -15,7 +15,7 @@ public class MinionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,6 +35,13 @@ public class MinionScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0), ForceMode.VelocityChange);
         }
     }
     void OnTriggerStay(Collider other)
