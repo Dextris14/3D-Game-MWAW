@@ -14,14 +14,14 @@ public class MenuButtons : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    public void NewGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("village");
     }
 
     public void LoadGame()
     {
-
+        SceneManager.LoadScene("Save Logs");
     }
 
     public void QuitGame()
