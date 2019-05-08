@@ -5,16 +5,29 @@ using UnityEngine;
 public class GiantScript : MonoBehaviour
 {
     public float Health = 200f;
+    public GameObject StepDust;
+    bool Ready = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("Step");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    IEnumerator Step()
+    {
+        while(Ready)
+        {
+            GameObject Dust = Instantiate(StepDust, transform.position + (transform.forward * 10), Quaternion.Euler(-90, 0, 0));
+            yield return new WaitForSeconds(2.95f);
+        }
+        Ready = true;
+        yield return new WaitForSeconds(.2f);
     }
 
     private void OnCollisionEnter(Collision collision)
