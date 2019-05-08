@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 5797128227259116962}
   m_Layer: 8
   m_Name: Frost Monster
-  m_TagString: Untagged
+  m_TagString: Giant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
