@@ -7,7 +7,7 @@ public class Magic : MonoBehaviour
     Camera Camera;
     public GameObject[] Prefab = new GameObject[6];
     public int SelectedMagic = 1;
-    public GameObject[] Displays = new GameObject[5];
+    public GameObject[] Displays = new GameObject[10];
 
     void Start()
     {
@@ -16,6 +16,32 @@ public class Magic : MonoBehaviour
 
     void Update()
     {
+        Displays[5].SetActive(false);
+        Displays[6].SetActive(false);
+        Displays[7].SetActive(false);
+        Displays[8].SetActive(false);
+        Displays[9].SetActive(false);
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<HealthAndMana>().Mana >= 10)
+        {
+            Displays[5].SetActive(true);
+            if(GameObject.FindGameObjectWithTag("Player").GetComponent<HealthAndMana>().Mana >= 15)
+            {
+                Displays[6].SetActive(true);
+                if(GameObject.FindGameObjectWithTag("Player").GetComponent<HealthAndMana>().Mana >= 17.5f)
+                {
+                    Displays[8].SetActive(true);
+                    if (GameObject.FindGameObjectWithTag("Player").GetComponent<HealthAndMana>().Mana >= 20)
+                    {
+                        Displays[7].SetActive(true);
+                        if (GameObject.FindGameObjectWithTag("Player").GetComponent<HealthAndMana>().Mana >= 35)
+                        {
+                            Displays[9].SetActive(true);
+                        }
+                    }
+                }
+            }
+        }
+
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             SelectedMagic = 1;
@@ -36,20 +62,20 @@ public class Magic : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SelectedMagic = 3;
-            Displays[0].SetActive(false);
-            Displays[1].SetActive(false);
-            Displays[2].SetActive(true);
-            Displays[3].SetActive(false);
-            Displays[4].SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
             SelectedMagic = 4;
             Displays[0].SetActive(false);
             Displays[1].SetActive(false);
             Displays[2].SetActive(false);
             Displays[3].SetActive(true);
+            Displays[4].SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SelectedMagic = 3;
+            Displays[0].SetActive(false);
+            Displays[1].SetActive(false);
+            Displays[2].SetActive(true);
+            Displays[3].SetActive(false);
             Displays[4].SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
@@ -142,9 +168,9 @@ public class Magic : MonoBehaviour
                 Zap.GetComponent<ZapScript>().Destination = transform.position + (Camera.transform.forward * 50f);
             }
         }
-        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 20f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 4)
+        else if (Input.GetButtonDown("Fire1") && Time.timeScale == 1 && GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana >= 17.5f && !Input.GetKey(KeyCode.Mouse1) && SelectedMagic == 4)
         {
-            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 20f;
+            GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 17.5f;
             Vector3 Destination;
             if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out Hit))
             {

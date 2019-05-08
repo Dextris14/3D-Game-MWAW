@@ -43,7 +43,7 @@ public class MonsterSpawn : MonoBehaviour
             }
         }
 
-        if (Giant && GameObject.Find("Giant") == null)
+        if (Giant && GameObject.FindGameObjectWithTag("Giant") == null)
         {
             RespawnTimes[2] -= Time.deltaTime;
             if (RespawnTimes[2] <= 0)

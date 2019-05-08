@@ -12,6 +12,7 @@ TagManager:
   - Imp
   - SlimePool
   - Leader
+  - Giant
   layers:
   - Default
   - TransparentFX
