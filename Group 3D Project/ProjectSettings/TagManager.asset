@@ -13,6 +13,7 @@ TagManager:
   - SlimePool
   - Leader
   - Giant
+  - Enterance
   layers:
   - Default
   - TransparentFX
