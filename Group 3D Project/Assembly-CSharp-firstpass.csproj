@@ -123,53 +123,50 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-=======
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
->>>>>>> 135341b22b0f6b5f8a541a01bbcdfdb34682bc6a
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>D:/UnityProjects/TRS/Test/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>D:/UnityProjects/AFW/3D-Game-MWAW/Group 3D Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

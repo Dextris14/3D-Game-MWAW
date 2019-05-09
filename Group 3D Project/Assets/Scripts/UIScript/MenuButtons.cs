@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     public bool PauseMenu = false;
+    public GameObject MainUI;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu)
@@ -46,5 +47,15 @@ public class MenuButtons : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+    
+    public void Retry()
+    {
+        Time.timeScale = 1;
+        GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Load();
+        MainUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        gameObject.SetActive(false);
     }
 }
