@@ -53,6 +53,7 @@ public class MenuButtons : MonoBehaviour
     {
         Time.timeScale = 1;
         GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Load();
+        Debug.Log(Time.timeScale);
         MainUI.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

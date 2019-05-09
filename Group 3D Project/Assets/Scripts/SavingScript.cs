@@ -39,7 +39,7 @@ public class SavingScript : MonoBehaviour
         {
             file = File.Open(SavePath, FileMode.Open);
         }
-        Data = new SaveData(transform.position, GameObject.FindGameObjectWithTag("Giant").transform.position);
+        Data = new SaveData(transform.position, GameObject.FindGameObjectWithTag("Giant").transform.position, GetComponent<HealthAndMana>().Health, GetComponent<HealthAndMana>().Mana);
         BF.Serialize(file, Data);
         file.Close();
     }
@@ -54,6 +54,8 @@ public class SavingScript : MonoBehaviour
             file.Close();
             transform.position = Data.GetPlayerVector3();
             GameObject.FindGameObjectWithTag("Giant").transform.position = Data.GetEnemyVector3();
+            GetComponent<HealthAndMana>().Health = Data.GetHealth();
+            GetComponent<HealthAndMana>().Mana = Data.GetMana();
         }
     }
 
@@ -77,7 +79,10 @@ public class SaveData
     public float b;
     public float c;
 
-    public SaveData(Vector3 PlayerPosition, Vector3 EnemyPosition)
+    public float h;
+    public float m;
+
+    public SaveData(Vector3 PlayerPosition, Vector3 EnemyPosition, float Health, float Mana)
     {
         x = PlayerPosition.x;
         y = PlayerPosition.y;
@@ -86,6 +91,9 @@ public class SaveData
         a = EnemyPosition.x;
         b = EnemyPosition.y;
         c = EnemyPosition.z;
+
+        h = Health;
+        m = Mana;
     }
     public Vector3 GetPlayerVector3()
     {
@@ -94,6 +102,14 @@ public class SaveData
     public Vector3 GetEnemyVector3()
     {
         return new Vector3(a, b, c);
+    }
+    public float GetHealth()
+    {
+        return h;
+    }
+    public float GetMana()
+    {
+        return m;
     }
 }
 
