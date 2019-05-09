@@ -3,21 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Minion
-  - Magic
-  - LightningMonster
-  - Slime
-  - Explosion
-  - Imp
-  - SlimePool
-  - Leader
-  - Giant
-<<<<<<< HEAD
-  - Enterance
-=======
-  - Checkpoint
->>>>>>> 531618ba4b22f3d26e861f0a5297d0da1e299587
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -27,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - DamageSource
-  - Magic
-  - Environment
-  - IgnoreEnemy
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
