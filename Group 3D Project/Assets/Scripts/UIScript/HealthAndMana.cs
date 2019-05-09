@@ -10,6 +10,7 @@ public class HealthAndMana : MonoBehaviour
     public float Mana;
     public Slider HealthBar;
     public Slider ManaBar;
+    public GameObject DeathCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,14 @@ public class HealthAndMana : MonoBehaviour
         ManaBar.value = Mana;
         if(Health <= 0)
         {
-            SceneManager.LoadScene("DeathScene");
+            Time.timeScale = 0;
+            DeathCanvas.SetActive(true);
+            if(GameObject.Find("MainUI") != null)
+            {
+                GameObject.Find("MainUI").SetActive(false);
+            }
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         if(Input.GetKey(KeyCode.Mouse1) && Time.timeScale == 1)
         {

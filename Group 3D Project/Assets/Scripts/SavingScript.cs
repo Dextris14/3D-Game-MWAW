@@ -21,10 +21,10 @@ public class SavingScript : MonoBehaviour
         //{
         //    Save();
         //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    Load();
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Load();
+        }
     }
 
     void Save()
@@ -39,12 +39,12 @@ public class SavingScript : MonoBehaviour
         {
             file = File.Open(SavePath, FileMode.Open);
         }
-        Data = new SaveData(transform.position);
+        Data = new SaveData(transform.position, GameObject.FindGameObjectWithTag("Giant").transform.position);
         BF.Serialize(file, Data);
         file.Close();
     }
 
-    void Load()
+    public void Load()
     {
         if (File.Exists(SavePath))
         {
@@ -52,7 +52,16 @@ public class SavingScript : MonoBehaviour
             FileStream file = File.Open(SavePath, FileMode.Open);
             Data = (SaveData)BF.Deserialize(file);
             file.Close();
-            transform.position = Data.GetVector3();
+            transform.position = Data.GetPlayerVector3();
+            GameObject.FindGameObjectWithTag("Giant").transform.position = Data.GetEnemyVector3();
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Checkpoint")
+        {
+            Save();
         }
     }
 }
@@ -64,15 +73,27 @@ public class SaveData
     public float y;
     public float z;
 
-    public SaveData(Vector3 Position)
+    public float a;
+    public float b;
+    public float c;
+
+    public SaveData(Vector3 PlayerPosition, Vector3 EnemyPosition)
     {
-        x = Position.x;
-        y = Position.y;
-        z = Position.z;
+        x = PlayerPosition.x;
+        y = PlayerPosition.y;
+        z = PlayerPosition.z;
+
+        a = EnemyPosition.x;
+        b = EnemyPosition.y;
+        c = EnemyPosition.z;
     }
-    public Vector3 GetVector3()
+    public Vector3 GetPlayerVector3()
     {
         return new Vector3(x, y, z);
+    }
+    public Vector3 GetEnemyVector3()
+    {
+        return new Vector3(a, b, c);
     }
 }
 
