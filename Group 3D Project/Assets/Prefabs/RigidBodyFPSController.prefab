@@ -33650,6 +33650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eabd4982bd4d384984b7177d4cb5caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SaveMessageBox: {fileID: 0}
 --- !u!114 &8353803202673417320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33666,6 +33667,7 @@ MonoBehaviour:
   Mana: 100
   HealthBar: {fileID: 0}
   ManaBar: {fileID: 0}
+  DeathCanvas: {fileID: 0}
 --- !u!1 &8353803202673449679
 GameObject:
   m_ObjectHideFlags: 0

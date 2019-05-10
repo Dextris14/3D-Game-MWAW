@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.UI;
 
 public class SavingScript : MonoBehaviour
 {
     string SavePath;
     SaveData Data;
+
+    float SaveDelay = 5f;
+
+    public Text SaveMessageBox;
+    float SaveMessageTime = 3f;
 
     void Start()
     {
@@ -17,6 +23,12 @@ public class SavingScript : MonoBehaviour
 
     void Update()
     {
+        SaveMessageTime -= Time.deltaTime;
+        SaveDelay -= Time.deltaTime;
+        if(SaveMessageTime <= 0)
+        {
+            SaveMessageBox.text = " ";
+        }
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //{
         //    Save();
@@ -24,6 +36,9 @@ public class SavingScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Load();
+            SaveMessageBox.text = "Game Loaded";
+            SaveMessageTime = 3f;
+            SaveDelay = 5f;
         }
     }
 
@@ -61,9 +76,12 @@ public class SavingScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Checkpoint")
+        if(other.gameObject.tag == "Checkpoint" && SaveDelay <= 0)
         {
             Save();
+            SaveMessageBox.text = "Game Saved";
+            SaveMessageTime = 3f;
+            SaveDelay = 5f;
         }
     }
 }
