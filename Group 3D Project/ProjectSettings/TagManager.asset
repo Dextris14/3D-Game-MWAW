@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Giant
+  - Magic
+  - SlimePool
+  - Checkpoint
+  - LightningMonster
+  - Slime
+  - Imp
+  - Leader
+  - Minion
   layers:
   - Default
   - TransparentFX
@@ -13,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 

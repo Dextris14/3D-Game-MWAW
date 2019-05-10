@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Minion: {fileID: 7888270467110671313, guid: 193fba2b5ffd12748b96c0f872c9603a, type: 3}
   Health: 100
+  SpawnPoint: {x: 507, y: 1, z: 467}
 --- !u!114 &1417660827
 MonoBehaviour:
   m_ObjectHideFlags: 0

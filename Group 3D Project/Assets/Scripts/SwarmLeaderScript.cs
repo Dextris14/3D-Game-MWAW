@@ -7,6 +7,9 @@ public class SwarmLeaderScript : MonoBehaviour
 {
     public GameObject Minion;
     public float Health = 100f;
+    public Vector3 SpawnPoint;
+    bool Alive = true;
+    float RespawnTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +19,32 @@ public class SwarmLeaderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Health <= 0 && Alive)
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<NavScript>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+            transform.position = new Vector3(500, -500, 500);
+            Alive = false;
+            RespawnTime = 15f;
+        }
+        RespawnTime -= Time.deltaTime;
+        if(RespawnTime <= 0 && !Alive)
+        {
+            transform.position = SpawnPoint;
+            GetComponent<NavMeshAgent>().enabled = true;
+            GetComponent<NavScript>().enabled = true;
+            GetComponent<BoxCollider>().enabled = true;
+            Health = 100f;
+            Alive = true;
+        }
     }
 
     IEnumerator SpawnMinion()
     {
         while(true)
         {
-            if(GameObject.FindGameObjectsWithTag("Minion").Length < 10)
+            if(GameObject.FindGameObjectsWithTag("Minion").Length < 10 && Alive)
             {
                 Instantiate(Minion, transform.position, Quaternion.identity);
             }
@@ -36,18 +57,6 @@ public class SwarmLeaderScript : MonoBehaviour
         if (collision.gameObject.tag == "Magic")
         {
             Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-        if (collision.gameObject.tag == "Explosion")
-        {
-            Health -= 10;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
     }
     private void OnTriggerStay(Collider other)
@@ -55,10 +64,6 @@ public class SwarmLeaderScript : MonoBehaviour
         if (other.gameObject.tag == "Magic")
         {
             Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
         if(other.gameObject.tag == "SlimePool")
         {

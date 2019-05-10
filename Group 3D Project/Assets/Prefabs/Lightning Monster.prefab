@@ -4897,6 +4897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChaseDistance: 50
   Health: 50
+  SpawnPoint: {x: 541, y: 1, z: 466}
 --- !u!195 &282698643278273583
 NavMeshAgent:
   m_ObjectHideFlags: 0

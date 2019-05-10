@@ -11,6 +11,9 @@ public class LightningMonsterScript : MonoBehaviour
     public float ChaseDistance = 10;
     private Vector3 Home;
     public float Health = 100f;
+    public Vector3 SpawnPoint;
+    bool Alive = true;
+    float RespawnTime;
 
     void Start()
     {
@@ -21,7 +24,24 @@ public class LightningMonsterScript : MonoBehaviour
 
     void Update()
     {
-
+        if (Health <= 0 && Alive)
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<NavMeshAgent>().speed = 25f;
+            transform.position = new Vector3(500, -500, 500);
+            Alive = false;
+            RespawnTime = 15f;
+        }
+        RespawnTime -= Time.deltaTime;
+        if (RespawnTime <= 0 && !Alive)
+        {
+            transform.position = SpawnPoint;
+            GetComponent<NavMeshAgent>().enabled = true;
+            GetComponent<CapsuleCollider>().enabled = true;
+            Health = 50f;
+            Alive = true;
+        }
     }
 
     IEnumerator Relocate()
@@ -29,13 +49,16 @@ public class LightningMonsterScript : MonoBehaviour
         while(true)
         {
             Vector3 Direction = Player.transform.position - transform.position;
-            if (Direction.magnitude <= ChaseDistance)
+            if(Alive)
             {
-                Agent.destination = Player.transform.position + new Vector3(Random.Range(-2.5f, 2.5f), 0, Random.Range(-2.5f, 2.5f));
-            }
-            else
-            {
-                Agent.destination = transform.position + new Vector3(Random.Range(-30f, 30f), 0, Random.Range(-30f, 30f));
+                if (Direction.magnitude <= ChaseDistance)
+                {
+                    Agent.destination = Player.transform.position + new Vector3(Random.Range(-2.5f, 2.5f), 0, Random.Range(-2.5f, 2.5f));
+                }
+                else
+                {
+                    Agent.destination = transform.position + new Vector3(Random.Range(-30f, 30f), 0, Random.Range(-30f, 30f));
+                }
             }
             yield return new WaitForSeconds(.75f);
         }
@@ -46,18 +69,6 @@ public class LightningMonsterScript : MonoBehaviour
         if (collision.gameObject.tag == "Magic")
         {
             Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-        if (collision.gameObject.tag == "Explosion")
-        {
-            Health -= 10;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
     }
 
@@ -66,10 +77,6 @@ public class LightningMonsterScript : MonoBehaviour
         if (other.gameObject.tag == "Magic")
         {
             Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
         if (other.gameObject.tag == "SlimePool")
         {

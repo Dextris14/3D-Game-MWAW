@@ -127,37 +127,25 @@ public class Magic : MonoBehaviour
             GameObject.Find("RigidBodyFPSController").GetComponent<HealthAndMana>().Mana -= 20f;
             if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out Hit, 50f))
             {
-                if(Hit.transform.gameObject.tag == "Lightning Monster")
+                if(Hit.transform.gameObject.tag == "LightningMonster")
                 {
                     Hit.transform.gameObject.GetComponent<LightningMonsterScript>().Health -= 20f;
-                    if(Hit.transform.gameObject.GetComponent<LightningMonsterScript>().Health <= 0)
-                    {
-                        Destroy(Hit.transform.gameObject);
-                    }
                 }
                 else if(Hit.transform.gameObject.tag == "Slime")
                 {
                     Hit.transform.gameObject.GetComponent<SwarmLeaderScript>().Health -= 20f;
-                    if (Hit.transform.gameObject.GetComponent<SwarmLeaderScript>().Health <= 0)
-                    {
-                        Destroy(Hit.transform.gameObject);
-                    }
                 }
                 else if(Hit.transform.gameObject.tag == "Minion")
                 {
                     Hit.transform.gameObject.GetComponent<MinionScript>().Health -= 20f;
-                    if (Hit.transform.gameObject.GetComponent<MinionScript>().Health <= 0)
-                    {
-                        Destroy(Hit.transform.gameObject);
-                    }
                 }
                 else if (Hit.transform.gameObject.tag == "Imp")
                 {
                     Hit.transform.gameObject.GetComponent<FireMonster>().Health -= 20f;
-                    if (Hit.transform.gameObject.GetComponent<FireMonster>().Health <= 0)
-                    {
-                        Destroy(Hit.transform.gameObject);
-                    }
+                }
+                else if (Hit.transform.gameObject.tag == "Giant")
+                {
+                    Hit.transform.gameObject.GetComponent<GiantScript>().Health -= 20f;
                 }
                 GameObject Zap = Instantiate(Prefab[5], transform.position - (Camera.transform.forward * ((Hit.point - transform.position).magnitude * .11f)), Quaternion.identity);
                 Zap.GetComponent<ZapScript>().Destination = Hit.point;

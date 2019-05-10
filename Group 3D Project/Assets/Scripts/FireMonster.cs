@@ -8,6 +8,9 @@ public class FireMonster : MonoBehaviour
     public GameObject Firebolt;
     public float Health = 100f;
     GameObject Player;
+    public Vector3 SpawnPoint;
+    bool Alive = true;
+    float RespawnTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,22 @@ public class FireMonster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Health <= 0 && Alive)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+            transform.position = new Vector3(500, -500, 500);
+            Alive = false;
+            RespawnTime = 15f;
+        }
+        RespawnTime -= Time.deltaTime;
+        if (RespawnTime <= 0 && !Alive)
+        {
+            transform.position = SpawnPoint;
+            GameObject.FindGameObjectWithTag("Leader").transform.position = SpawnPoint;
+            GetComponent<CapsuleCollider>().enabled = true;
+            Health = 100f;
+            Alive = true;
+        }
         FireCD -= Time.deltaTime;
         if ((Player.transform.position - transform.position).magnitude < 100f && (Player.transform.position - transform.position).magnitude >= 50f)
         {
@@ -43,18 +62,15 @@ public class FireMonster : MonoBehaviour
         if(collision.gameObject.tag == "Magic")
         {
             Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
-            if(Health <= 0)
-            {
-                Destroy(gameObject);
-            }
+
         }
-        if (collision.gameObject.tag == "Explosion")
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Magic")
         {
-            Health -= 10;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
         }
     }
 }

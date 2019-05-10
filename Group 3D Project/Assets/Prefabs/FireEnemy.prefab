@@ -9940,7 +9940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firebolt: {fileID: 2573580492187199568, guid: b060b30c4289a4c4f9dacc339a3899f2,
     type: 3}
-  Health: 100
+  Health: 125
+  SpawnPoint: {x: 535, y: 0.25, z: 465}
 --- !u!54 &1408478903125116512
 Rigidbody:
   m_ObjectHideFlags: 0

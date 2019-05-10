@@ -10,10 +10,12 @@ public class SavingScript : MonoBehaviour
     string SavePath;
     SaveData Data;
 
-    float SaveDelay = 5f;
+    float SaveDelay = 4f;
 
     public Text SaveMessageBox;
     float SaveMessageTime = 3f;
+
+    GameObject[] Enemies = new GameObject[14];
 
     void Start()
     {
@@ -33,12 +35,9 @@ public class SavingScript : MonoBehaviour
         //{
         //    Save();
         //}
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             Load();
-            SaveMessageBox.text = "Game Loaded";
-            SaveMessageTime = 3f;
-            SaveDelay = 5f;
         }
     }
 
@@ -54,6 +53,22 @@ public class SavingScript : MonoBehaviour
         {
             file = File.Open(SavePath, FileMode.Open);
         }
+        //if (GameObject.FindGameObjectWithTag("Giant") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Giant"));
+        //}
+        //if (GameObject.FindGameObjectWithTag("Slime") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Slime"));
+        //}
+        //if (GameObject.FindGameObjectWithTag("Imp") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Imp"));
+        //}
+        //if (GameObject.FindGameObjectWithTag("Imp") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Imp"));
+        //}
         Data = new SaveData(transform.position, GameObject.FindGameObjectWithTag("Giant").transform.position, GetComponent<HealthAndMana>().Health, GetComponent<HealthAndMana>().Mana);
         BF.Serialize(file, Data);
         file.Close();
@@ -71,6 +86,9 @@ public class SavingScript : MonoBehaviour
             GameObject.FindGameObjectWithTag("Giant").transform.position = Data.GetEnemyVector3();
             GetComponent<HealthAndMana>().Health = Data.GetHealth();
             GetComponent<HealthAndMana>().Mana = Data.GetMana();
+            SaveMessageBox.text = "Game Loaded";
+            SaveMessageTime = 3f;
+            SaveDelay = 4f;
         }
     }
 
@@ -81,7 +99,7 @@ public class SavingScript : MonoBehaviour
             Save();
             SaveMessageBox.text = "Game Saved";
             SaveMessageTime = 3f;
-            SaveDelay = 5f;
+            SaveDelay = 4f;
         }
     }
 }
