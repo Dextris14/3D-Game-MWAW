@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\SavingScript.cs" />
     <Compile Include="Assets\Scripts\SlowGemSpin.cs" />
     <Compile Include="Assets\Scripts\SwarmLeaderScript.cs" />
+    <Compile Include="Assets\Scripts\toNextLV.cs" />
     <Compile Include="Assets\Scripts\UIScript\HealthAndMana.cs" />
     <Compile Include="Assets\Scripts\UIScript\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\ZapScript.cs" />
