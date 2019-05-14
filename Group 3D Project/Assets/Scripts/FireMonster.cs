@@ -31,19 +31,21 @@ public class FireMonster : MonoBehaviour
         if (RespawnTime <= 0 && !Alive)
         {
             transform.position = SpawnPoint;
-            GameObject.FindGameObjectWithTag("Leader").transform.position = SpawnPoint;
+            //GameObject.FindGameObjectWithTag("Leader").transform.position = SpawnPoint + new Vector3(0, 23, 0);
             GetComponent<CapsuleCollider>().enabled = true;
             Health = 100f;
             Alive = true;
         }
         FireCD -= Time.deltaTime;
-        if ((Player.transform.position - transform.position).magnitude < 100f && (Player.transform.position - transform.position).magnitude >= 50f)
+        if ((Player.transform.position - transform.position).magnitude < 999f && (Player.transform.position - transform.position).magnitude >= 50f)
         {
-            GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            //GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = ((Player.transform.position + new Vector3(0, 25, 0)) - transform.position).normalized * 3f;
         }
         else if ((Player.transform.position - transform.position).magnitude < 50f && (Player.transform.position - transform.position).magnitude >= 10f)
         {
-            GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            //GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = ((Player.transform.position + new Vector3(0, 25, 0)) - transform.position).normalized * 3f;
             if (FireCD <= 0)
             {
                 GameObject Projectile = Instantiate(Firebolt, transform.position, Quaternion.identity);
