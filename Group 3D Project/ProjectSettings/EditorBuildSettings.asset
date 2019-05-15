@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: cdb5262ef2a1e83489ac544a1c12c6a9
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 6042449d515f1de43af5bf9bb0afe061
+  - enabled: 1
+    path: Assets/Scenes/FireMaze.unity
+    guid: 23d6eb4f647c6f5499151de677fcbd3e
   - enabled: 0
     path: Assets/Scenes/SampleMaze.unity
     guid: 32179c06fe4016147b4e13a881fad146

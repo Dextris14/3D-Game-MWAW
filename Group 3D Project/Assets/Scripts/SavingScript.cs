@@ -4,38 +4,37 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SavingScript : MonoBehaviour
 {
     string SavePath;
     SaveData Data;
 
-    float SaveDelay = 4f;
-
     public Text SaveMessageBox;
     float SaveMessageTime = 3f;
 
-    GameObject[] Enemies = new GameObject[14];
+    public bool[] Gems = new bool[4];
 
     void Start()
     {
         SavePath = Application.persistentDataPath + "/" + gameObject.name + "MySave.dat";
         Debug.Log(SavePath);
+        Load();
     }
 
     void Update()
     {
         SaveMessageTime -= Time.deltaTime;
-        SaveDelay -= Time.deltaTime;
         if(SaveMessageTime <= 0)
         {
             SaveMessageBox.text = " ";
         }
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    Save();
-        //}
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            Save();
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadDivide))
         {
             Load();
         }
@@ -53,25 +52,11 @@ public class SavingScript : MonoBehaviour
         {
             file = File.Open(SavePath, FileMode.Open);
         }
-        //if (GameObject.FindGameObjectWithTag("Giant") != null)
-        //{
-        //    Enemies.Add(GameObject.FindGameObjectWithTag("Giant"));
-        //}
-        //if (GameObject.FindGameObjectWithTag("Slime") != null)
-        //{
-        //    Enemies.Add(GameObject.FindGameObjectWithTag("Slime"));
-        //}
-        //if (GameObject.FindGameObjectWithTag("Imp") != null)
-        //{
-        //    Enemies.Add(GameObject.FindGameObjectWithTag("Imp"));
-        //}
-        //if (GameObject.FindGameObjectWithTag("Imp") != null)
-        //{
-        //    Enemies.Add(GameObject.FindGameObjectWithTag("Imp"));
-        //}
-        Data = new SaveData(transform.position, GameObject.FindGameObjectWithTag("Giant").transform.position, GetComponent<HealthAndMana>().Health, GetComponent<HealthAndMana>().Mana);
+        Data = new SaveData(Gems);
         BF.Serialize(file, Data);
         file.Close();
+        SaveMessageBox.text = "Game Saved";
+        SaveMessageTime = 3f;
     }
 
     public void Load()
@@ -82,24 +67,22 @@ public class SavingScript : MonoBehaviour
             FileStream file = File.Open(SavePath, FileMode.Open);
             Data = (SaveData)BF.Deserialize(file);
             file.Close();
-            transform.position = Data.GetPlayerVector3();
-            GameObject.FindGameObjectWithTag("Giant").transform.position = Data.GetEnemyVector3();
-            GetComponent<HealthAndMana>().Health = Data.GetHealth();
-            GetComponent<HealthAndMana>().Mana = Data.GetMana();
+            Gems = Data.GetGems();
             SaveMessageBox.text = "Game Loaded";
             SaveMessageTime = 3f;
-            SaveDelay = 4f;
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Checkpoint" && SaveDelay <= 0)
+        if(other.gameObject.tag == "Gem")
         {
-            Save();
-            SaveMessageBox.text = "Game Saved";
-            SaveMessageTime = 3f;
-            SaveDelay = 4f;
+            if(other.name == "FireGem")
+            {
+                Gems[0] = true;
+                Save();
+                SceneManager.LoadScene("LevelSelect");
+            }
         }
     }
 }
@@ -107,45 +90,15 @@ public class SavingScript : MonoBehaviour
 [System.Serializable]
 public class SaveData
 {
-    public float x;
-    public float y;
-    public float z;
+    public bool[] G;
 
-    public float a;
-    public float b;
-    public float c;
-
-    public float h;
-    public float m;
-
-    public SaveData(Vector3 PlayerPosition, Vector3 EnemyPosition, float Health, float Mana)
+    public SaveData(bool []Gems)
     {
-        x = PlayerPosition.x;
-        y = PlayerPosition.y;
-        z = PlayerPosition.z;
-
-        a = EnemyPosition.x;
-        b = EnemyPosition.y;
-        c = EnemyPosition.z;
-
-        h = Health;
-        m = Mana;
+        G = Gems;
     }
-    public Vector3 GetPlayerVector3()
+    public bool[] GetGems()
     {
-        return new Vector3(x, y, z);
-    }
-    public Vector3 GetEnemyVector3()
-    {
-        return new Vector3(a, b, c);
-    }
-    public float GetHealth()
-    {
-        return h;
-    }
-    public float GetMana()
-    {
-        return m;
+        return G;
     }
 }
 
