@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.UI;
 
 public class SavingScript : MonoBehaviour
 {
     string SavePath;
     SaveData Data;
+
+    float SaveDelay = 4f;
+
+    public Text SaveMessageBox;
+    float SaveMessageTime = 3f;
+
+    GameObject[] Enemies = new GameObject[14];
 
     void Start()
     {
@@ -17,14 +25,20 @@ public class SavingScript : MonoBehaviour
 
     void Update()
     {
+        SaveMessageTime -= Time.deltaTime;
+        SaveDelay -= Time.deltaTime;
+        if(SaveMessageTime <= 0)
+        {
+            SaveMessageBox.text = " ";
+        }
         //if (Input.GetKeyDown(KeyCode.Alpha1))
         //{
         //    Save();
         //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    Load();
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            Load();
+        }
     }
 
     void Save()
@@ -39,12 +53,28 @@ public class SavingScript : MonoBehaviour
         {
             file = File.Open(SavePath, FileMode.Open);
         }
-        Data = new SaveData(transform.position);
+        //if (GameObject.FindGameObjectWithTag("Giant") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Giant"));
+        //}
+        //if (GameObject.FindGameObjectWithTag("Slime") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Slime"));
+        //}
+        //if (GameObject.FindGameObjectWithTag("Imp") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Imp"));
+        //}
+        //if (GameObject.FindGameObjectWithTag("Imp") != null)
+        //{
+        //    Enemies.Add(GameObject.FindGameObjectWithTag("Imp"));
+        //}
+        Data = new SaveData(transform.position, GameObject.FindGameObjectWithTag("Giant").transform.position, GetComponent<HealthAndMana>().Health, GetComponent<HealthAndMana>().Mana);
         BF.Serialize(file, Data);
         file.Close();
     }
 
-    void Load()
+    public void Load()
     {
         if (File.Exists(SavePath))
         {
@@ -52,7 +82,24 @@ public class SavingScript : MonoBehaviour
             FileStream file = File.Open(SavePath, FileMode.Open);
             Data = (SaveData)BF.Deserialize(file);
             file.Close();
-            transform.position = Data.GetVector3();
+            transform.position = Data.GetPlayerVector3();
+            GameObject.FindGameObjectWithTag("Giant").transform.position = Data.GetEnemyVector3();
+            GetComponent<HealthAndMana>().Health = Data.GetHealth();
+            GetComponent<HealthAndMana>().Mana = Data.GetMana();
+            SaveMessageBox.text = "Game Loaded";
+            SaveMessageTime = 3f;
+            SaveDelay = 4f;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Checkpoint" && SaveDelay <= 0)
+        {
+            Save();
+            SaveMessageBox.text = "Game Saved";
+            SaveMessageTime = 3f;
+            SaveDelay = 4f;
         }
     }
 }
@@ -64,15 +111,41 @@ public class SaveData
     public float y;
     public float z;
 
-    public SaveData(Vector3 Position)
+    public float a;
+    public float b;
+    public float c;
+
+    public float h;
+    public float m;
+
+    public SaveData(Vector3 PlayerPosition, Vector3 EnemyPosition, float Health, float Mana)
     {
-        x = Position.x;
-        y = Position.y;
-        z = Position.z;
+        x = PlayerPosition.x;
+        y = PlayerPosition.y;
+        z = PlayerPosition.z;
+
+        a = EnemyPosition.x;
+        b = EnemyPosition.y;
+        c = EnemyPosition.z;
+
+        h = Health;
+        m = Mana;
     }
-    public Vector3 GetVector3()
+    public Vector3 GetPlayerVector3()
     {
         return new Vector3(x, y, z);
+    }
+    public Vector3 GetEnemyVector3()
+    {
+        return new Vector3(a, b, c);
+    }
+    public float GetHealth()
+    {
+        return h;
+    }
+    public float GetMana()
+    {
+        return m;
     }
 }
 

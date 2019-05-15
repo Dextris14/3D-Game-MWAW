@@ -4843,5 +4843,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Damage: 1
+  Damage: 0
   Type: 6

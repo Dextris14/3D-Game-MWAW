@@ -9940,7 +9940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firebolt: {fileID: 2573580492187199568, guid: b060b30c4289a4c4f9dacc339a3899f2,
     type: 3}
-  Health: 100
+  Health: 125
+  SpawnPoint: {x: 575, y: 15, z: 595}
 --- !u!54 &1408478903125116512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9966,7 +9967,7 @@ AimConstraint:
   m_GameObject: {fileID: 2390540950167219435}
   m_Enabled: 1
   m_Weight: 1
-  m_RotationAtRest: {x: -0, y: -179.02295, z: -0}
+  m_RotationAtRest: {x: -0, y: -152.00583, z: -0}
   m_RotationOffset: {x: 0, y: 0, z: 0}
   m_AimVector: {x: 0, y: 0, z: 1}
   m_UpVector: {x: 0, y: 1, z: 0}
@@ -10001,7 +10002,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2390540950167219435}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b60478cfd40a75b4b87b5c610721ca74, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.9

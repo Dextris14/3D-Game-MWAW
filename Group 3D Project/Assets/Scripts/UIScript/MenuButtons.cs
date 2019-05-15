@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     public bool PauseMenu = false;
+    public GameObject MainUI;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu)
@@ -14,9 +15,14 @@ public class MenuButtons : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    public void NewGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("village");
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Save Logs");
     }
 
     public void QuitGame()
@@ -41,5 +47,16 @@ public class MenuButtons : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+    
+    public void Retry()
+    {
+        Time.timeScale = 1;
+        GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Load();
+        Debug.Log(Time.timeScale);
+        MainUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        gameObject.SetActive(false);
     }
 }

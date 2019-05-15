@@ -8,6 +8,9 @@ public class FireMonster : MonoBehaviour
     public GameObject Firebolt;
     public float Health = 100f;
     GameObject Player;
+    public Vector3 SpawnPoint;
+    bool Alive = true;
+    float RespawnTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +20,32 @@ public class FireMonster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FireCD -= Time.deltaTime;
-        if ((Player.transform.position - transform.position).magnitude < 100f && (Player.transform.position - transform.position).magnitude >= 50f)
+        if (Health <= 0 && Alive)
         {
-            GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            GetComponent<CapsuleCollider>().enabled = false;
+            transform.position = new Vector3(500, -500, 500);
+            Alive = false;
+            RespawnTime = 15f;
+        }
+        RespawnTime -= Time.deltaTime;
+        if (RespawnTime <= 0 && !Alive)
+        {
+            transform.position = SpawnPoint;
+            //GameObject.FindGameObjectWithTag("Leader").transform.position = SpawnPoint + new Vector3(0, 23, 0);
+            GetComponent<CapsuleCollider>().enabled = true;
+            Health = 100f;
+            Alive = true;
+        }
+        FireCD -= Time.deltaTime;
+        if ((Player.transform.position - transform.position).magnitude < 999f && (Player.transform.position - transform.position).magnitude >= 50f)
+        {
+            //GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = ((Player.transform.position + new Vector3(0, 25, 0)) - transform.position).normalized * 3f;
         }
         else if ((Player.transform.position - transform.position).magnitude < 50f && (Player.transform.position - transform.position).magnitude >= 10f)
         {
-            GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            //GetComponent<Rigidbody>().velocity = (GameObject.FindGameObjectWithTag("Leader").transform.position - transform.position).normalized * 3f;
+            GetComponent<Rigidbody>().velocity = ((Player.transform.position + new Vector3(0, 25, 0)) - transform.position).normalized * 3f;
             if (FireCD <= 0)
             {
                 GameObject Projectile = Instantiate(Firebolt, transform.position, Quaternion.identity);
@@ -43,18 +64,15 @@ public class FireMonster : MonoBehaviour
         if(collision.gameObject.tag == "Magic")
         {
             Health -= collision.gameObject.GetComponent<ProjectileScript>().Damage;
-            if(Health <= 0)
-            {
-                Destroy(gameObject);
-            }
+
         }
-        if (collision.gameObject.tag == "Explosion")
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Magic")
         {
-            Health -= 10;
-            if (Health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Health -= other.gameObject.GetComponent<ProjectileScript>().Damage;
         }
     }
 }

@@ -8,6 +8,8 @@ public class ProjectileScript : MonoBehaviour
     float Countdown = 7.5f;
     public float Damage;
     public int Type = 1;
+    bool BurningOut = false;
+    float BurnOutTime = 5f;
 
     void Start()
     {
@@ -16,6 +18,19 @@ public class ProjectileScript : MonoBehaviour
 
     void Update()
     {
+        if(BurningOut)
+        {
+            BurnOutTime -= Time.deltaTime;
+            if(BurnOutTime <= 3)
+            {
+                GetComponent<SphereCollider>().enabled = false;
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+            if(BurnOutTime <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
         Countdown -= Time.deltaTime;
         if (Countdown <= 0 && Type != 3)
         {
@@ -37,17 +52,29 @@ public class ProjectileScript : MonoBehaviour
             GetComponent<SphereCollider>().isTrigger = true;
             GetComponent<Rigidbody>().isKinematic = true;
             Damage = .3f;
-            transform.localScale *= 5;
-            Destroy(gameObject, 1f);
+            BurningOut = true;
         }
         if (Type == 3)
         {
             if(transform.position.y <= 1)
             {
-                Instantiate(ExplodeEffect[1], new Vector3(transform.position.x, transform.position.y * 0, transform.position.z), Quaternion.identity);
+                Instantiate(ExplodeEffect[1], new Vector3(transform.position.x, 0, transform.position.z), Quaternion.identity);
             }
             Destroy(gameObject);
         }
+        if (Type == 4)
+        {
+            GameObject Effect = Instantiate(ExplodeEffect[3], transform.position, Quaternion.identity);
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            Destroy(gameObject, 5f);
+        }
+    }
+
+    void BurnOut()
+    {
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -62,6 +89,7 @@ public class ProjectileScript : MonoBehaviour
         {
             GameObject Effect = Instantiate(ExplodeEffect[1], transform.position, Quaternion.identity);
             Destroy(Effect, 1f);
+            transform.localScale *= 5;
         }
         if (Type == 3)
         {
