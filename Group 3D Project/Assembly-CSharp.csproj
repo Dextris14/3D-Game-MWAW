@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Firebolt.cs" />
     <Compile Include="Assets\Scripts\FireMonster.cs" />
     <Compile Include="Assets\Scripts\GemLevitate.cs" />
+    <Compile Include="Assets\Scripts\GemSpawner.cs" />
     <Compile Include="Assets\Scripts\GiantScript.cs" />
     <Compile Include="Assets\Scripts\KillScript.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />

@@ -83,6 +83,24 @@ public class SavingScript : MonoBehaviour
                 Save();
                 SceneManager.LoadScene("LevelSelect");
             }
+            if (other.name == "LightningGem")
+            {
+                Gems[1] = true;
+                Save();
+                SceneManager.LoadScene("LevelSelect");
+            }
+            if (other.name == "IceGem")
+            {
+                Gems[2] = true;
+                Save();
+                SceneManager.LoadScene("LevelSelect");
+            }
+            if (other.name == "SlimeGem")
+            {
+                Gems[3] = true;
+                Save();
+                SceneManager.LoadScene("LevelSelect");
+            }
         }
     }
 }
