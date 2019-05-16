@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\LightningMonsterScript.cs" />
     <Compile Include="Assets\Scripts\LightningSpawn.cs" />
+    <Compile Include="Assets\Scripts\LightPulse.cs" />
     <Compile Include="Assets\Scripts\LightRotate.cs" />
     <Compile Include="Assets\Scripts\Magic.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
