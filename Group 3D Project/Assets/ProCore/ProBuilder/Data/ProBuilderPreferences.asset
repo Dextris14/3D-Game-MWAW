@@ -13,19 +13,41 @@ MonoBehaviour:
   m_Name: ProBuilderPreferences
   m_EditorClassIdentifier: 
   m_Bool_keys: []
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ead1e796c451e901f21d8b74b1d238a006995d7e
   m_Int_keys:
   - pbHandleAlignment
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
+<<<<<<< HEAD
+=======
+=======
+  m_Int_keys: []
+  m_Float_keys: []
+>>>>>>> ae9c170e6ed83b1d3393a226a56de2fe5d41aa5b
+>>>>>>> ead1e796c451e901f21d8b74b1d238a006995d7e
   m_String_keys: []
   m_Color_keys: []
   m_Material_keys: []
   m_Bool_values: 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ead1e796c451e901f21d8b74b1d238a006995d7e
   m_Int_values: 00000000
   m_Float_values:
   - 0
   - 0
+<<<<<<< HEAD
+=======
+=======
+  m_Int_values: 
+  m_Float_values: []
+>>>>>>> ae9c170e6ed83b1d3393a226a56de2fe5d41aa5b
+>>>>>>> ead1e796c451e901f21d8b74b1d238a006995d7e
   m_String_values: []
   m_Color_values: []
   m_Material_values: []
