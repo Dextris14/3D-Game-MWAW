@@ -1730,6 +1730,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7569144957911087827, guid: 26272bbfd322aea4eb0d8d45ac94760d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7569144956731882483, guid: 26272bbfd322aea4eb0d8d45ac94760d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -8607,6 +8612,7 @@ MonoBehaviour:
   Gem2: {fileID: 7647698802028113670}
   Gem3: {fileID: 4680370933868534026}
   Gem4: {fileID: 3661809029308968549}
+  WinPortal: {fileID: 2055590510}
 --- !u!1 &555444841
 GameObject:
   m_ObjectHideFlags: 0
@@ -56804,13 +56810,14 @@ GameObject:
   - component: {fileID: 2055590514}
   - component: {fileID: 2055590513}
   - component: {fileID: 2055590512}
+  - component: {fileID: 2055590517}
   m_Layer: 0
   m_Name: UltamatePortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2055590511
 Transform:
   m_ObjectHideFlags: 0
@@ -61603,6 +61610,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055590510}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2055590517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055590510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090caef085e38a848aa5c029b9b3c317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelToLoad: 4
 --- !u!1 &2116430979
 GameObject:
   m_ObjectHideFlags: 0
