@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScene.unity
     guid: 950520949deaa9547a0a5a2ccdcee821
   - enabled: 1
+    path: Assets/Scenes/Maze4.unity
+    guid: d58c0241d8042bc489f1814b1b79930b
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: b709b81cbc5701246b9f6a5511f81396
   - enabled: 0
