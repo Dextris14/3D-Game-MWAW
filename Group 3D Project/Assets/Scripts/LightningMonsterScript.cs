@@ -20,6 +20,7 @@ public class LightningMonsterScript : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Player = GameObject.Find("RigidBodyFPSController");
         StartCoroutine("Relocate");
+        SpawnPoint = transform.position;
     }
 
     void Update()

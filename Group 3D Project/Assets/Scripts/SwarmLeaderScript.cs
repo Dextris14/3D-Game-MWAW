@@ -14,6 +14,7 @@ public class SwarmLeaderScript : MonoBehaviour
     void Start()
     {
         StartCoroutine("SpawnMinion");
+        SpawnPoint = transform.position;
     }
 
     // Update is called once per frame
