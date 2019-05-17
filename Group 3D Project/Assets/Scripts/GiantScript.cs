@@ -15,6 +15,7 @@ public class GiantScript : MonoBehaviour
     void Start()
     {
         StartCoroutine("Step");
+        SpawnPoint = transform.position;
     }
 
     // Update is called once per frame

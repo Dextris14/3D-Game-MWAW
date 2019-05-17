@@ -15,6 +15,7 @@ public class FireMonster : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("RigidBodyFPSController");
+        SpawnPoint = transform.position;
     }
 
     // Update is called once per frame
