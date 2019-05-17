@@ -8,6 +8,7 @@ public class GemSpawner : MonoBehaviour
     public GameObject Gem2;
     public GameObject Gem3;
     public GameObject Gem4;
+    public GameObject WinPortal;
 
     float WaitToSpawn = 0f;
     // Start is called before the first frame update
@@ -35,6 +36,11 @@ public class GemSpawner : MonoBehaviour
         if (WaitToSpawn >= 1.2f && GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Gems[3] == true)
         {
             Gem4.SetActive(true);
+        }
+
+        if(WaitToSpawn >= .1f && GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Gems[0] == true && GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Gems[1] == true && GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Gems[2] == true && GameObject.Find("RigidBodyFPSController").GetComponent<SavingScript>().Gems[3] == true)
+        {
+            WinPortal.SetActive(true);
         }
     }
 }
