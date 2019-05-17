@@ -73,11 +73,13 @@
     <Compile Include="Assets\Scripts\Firebolt.cs" />
     <Compile Include="Assets\Scripts\FireMonster.cs" />
     <Compile Include="Assets\Scripts\GemLevitate.cs" />
+    <Compile Include="Assets\Scripts\GemSpawner.cs" />
     <Compile Include="Assets\Scripts\GiantScript.cs" />
     <Compile Include="Assets\Scripts\KillScript.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\LightningMonsterScript.cs" />
     <Compile Include="Assets\Scripts\LightningSpawn.cs" />
+    <Compile Include="Assets\Scripts\LightPulse.cs" />
     <Compile Include="Assets\Scripts\LightRotate.cs" />
     <Compile Include="Assets\Scripts\Magic.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
