@@ -33,6 +33,9 @@ public class GemLevitate : MonoBehaviour
                 Rising = true;
             }
         }
-        GetComponent<Transform>().Rotate(new Vector3(0, 1, 0));
+        if(Time.timeScale == 1)
+        {
+            GetComponent<Transform>().Rotate(new Vector3(0, 1, 0));
+        }
     }
 }
